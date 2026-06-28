@@ -731,9 +731,20 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .scroll-hint-wrap{ justify-content:center; }
 
   /* Nav — floating pill adapts on tablet */
-  .nav{ gap:1.25rem; padding:.6rem 1.2rem; top:12px; }
-  .nav-links{ gap:1.25rem; }
-  .nav-theme{ position:static; margin-left:.5rem; }
+  .nav {
+    gap: 1.25rem;
+    padding: .6rem 1.2rem;
+    top: 12px;
+    width: 95%;
+    max-width: fit-content;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-links { gap: 1rem; flex-shrink: 0; }
+  .nav-theme { position: static; margin-left: auto; flex-shrink: 0; }
 
   /* Sections */
   .tech-grid{ grid-template-columns:repeat(4,1fr); gap:2rem 1rem; }
@@ -775,10 +786,20 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .hero-photo-ring{ width:180px; height:180px; }
   .photo-badge{ font-size:.72rem; padding:.35rem .8rem; }
 
-  /* Nav — hide text links, keep theme pill */
-  .nav{ padding:.8rem 1rem; }
-  .nav-links{ gap:.75rem; }
-  .nav-link{ font-size:.75rem; }
+  /* Nav — horizontal scroll on mobile */
+  .nav{
+    padding: .6rem 1rem;
+    width: 95%;
+    max-width: 100vw;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-links{ gap: 1rem; flex-shrink: 0; }
+  .nav-theme{ margin-left: 1rem; flex-shrink: 0; }
+  .nav-link{ font-size: .8rem; }
 
   /* Tech */
   .tech-grid{ grid-template-columns:repeat(3,1fr); gap:1.25rem .5rem; }
